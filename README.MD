@@ -17,3 +17,4 @@ This project is a Spring Boot application that demonstrates the use of Java 21, 
    "term": 10,
    "description": "10-year fixed rate mortgage"
    }'
+3. 
