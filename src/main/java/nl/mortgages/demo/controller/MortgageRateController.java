@@ -1,6 +1,9 @@
 package nl.mortgages.demo.controller;
 
+import nl.mortgages.demo.model.MortgageApplication;
+import nl.mortgages.demo.model.MortgageApplicationResponse;
 import nl.mortgages.demo.model.MortgageRate;
+import nl.mortgages.demo.service.MortgageApplicationService;
 import nl.mortgages.demo.service.MortgageRateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +18,9 @@ public class MortgageRateController {
 
     @Autowired
     private MortgageRateService mortgageRateService;
+
+    @Autowired
+    private MortgageApplicationService mortgageApplicationService;
 
     @GetMapping
     public ResponseEntity<List<MortgageRate>> getAllRates() {
@@ -37,9 +43,11 @@ public class MortgageRateController {
 
     @PostMapping
     public ResponseEntity<MortgageRate> addRate(@RequestBody MortgageRate rate) {
-        // 10
-        //11
-        //12
         return ResponseEntity.ok(mortgageRateService.addRate(rate));
+    }
+
+    @PostMapping("/apply")
+    public ResponseEntity<MortgageApplicationResponse> applyForMortgage(@RequestBody MortgageApplication application) {
+        return ResponseEntity.ok(mortgageApplicationService.checkMortgageEligibility(application));
     }
 }

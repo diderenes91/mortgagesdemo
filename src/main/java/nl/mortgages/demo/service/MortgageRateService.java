@@ -19,6 +19,7 @@ public class MortgageRateService {
         mortgageRates.put(3L, new MortgageRate(3L, "Fixed", 2.85, 15, "15-year fixed rate mortgage"));
         mortgageRates.put(4L, new MortgageRate(4L, "ARM", 2.5, 7, "7/1 Adjustable Rate Mortgage"));
         mortgageRates.put(5L, new MortgageRate(5L, "ARM", 2.75, 5, "5/1 Adjustable Rate Mortgage"));
+        mortgageRates.put(6L, new MortgageRate(6L, "Fixed", 9.25, 10, "20-year fixed rate mortgage"));
     }
 
     public List<MortgageRate> getAllRates() {
